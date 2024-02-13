@@ -2,5 +2,9 @@
 
 1. composer install
 2. pnpm install / npm install
-3. pnpm run dev/ npm run dev
-4. Buka terminal baru php artisan serve
+3. php artisan db:seed
+4. pnpm run dev/ npm run dev
+
+5. Buka terminal baru php artisan serve
+
+ANJAY
