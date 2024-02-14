@@ -11,6 +11,7 @@ use App\Http\Controllers\ReportController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminAddController;
 use App\Http\Controllers\SellingController;
+use App\Http\Controllers\CashierController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,17 +37,17 @@ Route::get('/dev', function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])
-    ->name('dashboard')
-    ->middleware('can:isSuperAdmin');
+        ->name('dashboard')
+        ->middleware('can:isSuperAdmin');
 
     // Product
     Route::get('/product', [ProductController::class, 'index'])->name('product')
-    ->middleware('can:isSuperAdmin');
+        ->middleware('can:isSuperAdmin');
     Route::post('/product', [ProductController::class, 'store'])->name('product.store');
     Route::patch('/product/{id}', [ProductController::class, 'update'])->name('product.update')
-    ->middleware('can:isSuperAdmin');
+        ->middleware('can:isSuperAdmin');
     Route::delete('/product/{id}', [ProductController::class, 'destroy'])->name('product.destroy')
-    ->middleware('can:isSuperAdmin');
+        ->middleware('can:isSuperAdmin');
 
     // Report 
     Route::get('/report', [ReportController::class, 'index'])->name('report');
@@ -57,20 +58,24 @@ Route::middleware('auth')->group(function () {
 
     // AdminAdd
     Route::get('/adminadd', [AdminAddController::class, 'index'])->name('adminadd')
-    ->middleware('can:isSuperAdmin');
+        ->middleware('can:isSuperAdmin');
     Route::post('/adminadd', [AdminAddController::class, 'store'])->name('adminadd.store')
-    ->middleware('can:isSuperAdmin');
+        ->middleware('can:isSuperAdmin');
     Route::delete('/adminadd/{id}', [AdminAddController::class, 'destroy'])->name('adminadd.destroy')
-    ->middleware('can:isSuperAdmin');
+        ->middleware('can:isSuperAdmin');
     Route::patch('/adminadd/{id}', [AdminAddController::class, 'update'])->name('adminadd.update')
-    ->middleware('can:isSuperAdmin');
+        ->middleware('can:isSuperAdmin');
 
     // Selling
     Route::get('/selling', [SellingController::class, 'index'])->name('selling');
     Route::post('/selling', [SellingController::class, 'store'])->name('selling.store');
-    
 
-    
+    // Cashier
+    Route::get('/cashier', [CashierController::class, 'index'])->name('cashier');
+    Route::post('/cashier', [CashierController::class, 'store'])->name('cashier.store');
+
+
+
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
