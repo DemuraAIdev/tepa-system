@@ -43,9 +43,6 @@ export default function Authenticated({ user, header, children }) {
                         </h1>
                         
                     </div>
-                    <p>
-                    {isSuperAdmin && <span className="text-xs text-red-500">SuperAdmin</span>}
-                    </p>
                     <div>
                         <ul className="pt-6">
                             {

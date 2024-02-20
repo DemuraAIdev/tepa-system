@@ -28,7 +28,7 @@ const FirstTab = () => {
                         <span>Your data has been saved</span>
                     </div>
                 )}
-                <div className="flex flex-col gap-4">
+                <div className="flex flex-col gap-4 items-center justify-center">
                     <input
                         type="Number"
                         name="productid"
@@ -36,7 +36,7 @@ const FirstTab = () => {
                         placeholder="Product ID"
                         onChange={(e) => setData('productid', e.target.value)}
                         value={data.productid}
-                        className="py-2 px-4 w-[100%] text-white rounded-xl focus:outline-none bg-slate-800"
+                        className="py-2 px-4 md:w-[100%] w-[80%] md:text-md text-sm text-white rounded-md bg-[#1e252f] border-[1px] border-gray-700 focus:outline-none"
                     />
                     <InputError message={errors.productid} className="mt-2" />
 
@@ -47,12 +47,12 @@ const FirstTab = () => {
                         placeholder="Product Amount"
                         onChange={(e) => setData('jumlah', e.target.value)}
                         value={data.jumlah}
-                        className="py-2 px-4 w-[100%] text-white rounded-xl focus:outline-none bg-slate-800"
+                        className="py-2 px-4 md:w-[100%] w-[80%] md:text-md text-sm text-white rounded-md bg-[#1e252f] border-[1px] border-gray-700 focus:outline-none"
                     />
                     <InputError message={errors.jumlah} className="mt-2" />
                 </div>
                 <div className="flex items-center justify-center pt-10">
-                    <button className="bg-indigo-600 py-2 px-24 rounded-xl text-white" type='submit' value="send" 
+                    <button className="border-[1px] border-gray-700 md:py-3 py-2 md:px-16 px-10 md:text-md text-sm rounded-md text-white bg-[#171d23]" type='submit' value="send" 
                     onClick={handleSubmit} disabled={processing}
                     >
                         Send

@@ -8,11 +8,11 @@ const SellingTabs = () => {
     const [activeTab, setActiveTab] = useState(1);
 
     return (
-        <div className="bg-slate-800 w-full min-h-screen p-7 flex flex-col items-center justify-center">
-            <div className='bg-slate-700 p-7 w-fit rounded-md'>
+        <div className="bg-[#171d23] w-full min-h-screen p-7 flex flex-col items-center justify-center">
+            <div className='bg-[#1e252f] shadow-cstm p-7 overflow-hidden rounded-xl'>
                 <div className="flex flex-row items-center justify-center">
                     <button
-                        className={`md:w-[20%] px-4 py-2 bg-indigo-600 text-white border-r-[1px] border-slate-700 rounded-tl-xl rounded-bl-xl ${activeTab === 1 ? 'bg-indigo-800 text-white' : ''
+                        className={`md:w-[20%] md:px-4 px-4 md:py-3 md:text-md text-sm py-2 border-gray-700 border-[1px] text-gray-300 rounded-tl-md rounded-bl-md ${activeTab === 1 ? 'bg-[#171d23] text-white ' : ''
                             }`}
                         onClick={() => setActiveTab(1)}
                     >
@@ -20,7 +20,7 @@ const SellingTabs = () => {
                     </button>
 
                     <button
-                        className={`md:w-[20%] px-4 py-2 bg-indigo-600 text-white rounded-tr-xl rounded-br-xl ${activeTab === 2 ? 'bg-indigo-800 text-white' : ''
+                        className={`md:w-[20%] md:px-4 px-4 md:py-3 md:text-md text-sm py-2 border-gray-700 border-[1px] text-gray-300 rounded-tr-md rounded-br-md ${activeTab === 2 ? 'bg-[#171d23] text-white' : ''
                             }`}
                         onClick={() => setActiveTab(2)}
                     >
