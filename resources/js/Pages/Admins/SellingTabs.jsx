@@ -8,7 +8,7 @@ const SellingTabs = () => {
     const [activeTab, setActiveTab] = useState(1);
 
     return (
-        <div className="bg-[#171d23] w-full min-h-screen p-7 flex flex-col items-center justify-center">
+        <div className="bg-[#171d23] md:w-full w-[30vh] min-h-[90vh] p-7 flex flex-col items-center justify-center">
             <div className='bg-[#1e252f] shadow-cstm p-7 overflow-hidden rounded-xl'>
                 <div className="flex flex-row items-center justify-center">
                     <button
