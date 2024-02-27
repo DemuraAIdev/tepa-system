@@ -41,8 +41,11 @@ export default function Authenticated({ user, header, children }) {
                         >
                             Technopark
                         </h1>
-                        
+
                     </div>
+                    <p>
+                        {isSuperAdmin && <span className="text-xs text-red-500">SuperAdmin</span>}
+                    </p>
                     <div>
                         <ul className="pt-6">
                             {
@@ -89,7 +92,7 @@ export default function Authenticated({ user, header, children }) {
                                         </RouteLink>
                                     </li></>
                             }
-                                                        <li
+                            <li
                                 className={`flex hover:bg-gray-700 duration-200 rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 mt"
                                         } `}
                             >
@@ -100,6 +103,20 @@ export default function Authenticated({ user, header, children }) {
                                     <span className={`${!open && "hidden"} origin-left duration-200`}>
 
                                         Selling
+                                    </span>
+                                </RouteLink>
+                            </li>
+                            <li
+                                className={`flex hover:bg-gray-700 duration-200 rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 mt"
+                                        } `}
+                            >
+                                <RouteLink href={route("cashier")} className='flex gap-4'>
+                                    <div className='text-lg'>
+                                        <FiDollarSign />
+                                    </div>
+                                    <span className={`${!open && "hidden"} origin-left duration-200`}>
+
+                                        Cashier
                                     </span>
                                 </RouteLink>
                             </li>
@@ -118,7 +135,7 @@ export default function Authenticated({ user, header, children }) {
                                     </span>
                                 </RouteLink>
                             </li>
-                            
+
 
                         </ul>
                     </div>
