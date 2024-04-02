@@ -43,9 +43,6 @@ export default function Authenticated({ user, header, children }) {
                         </h1>
 
                     </div>
-                    <p>
-                        {isSuperAdmin && <span className="text-xs text-red-500">SuperAdmin</span>}
-                    </p>
                     <div>
                         <ul className="pt-6">
                             {
@@ -106,7 +103,7 @@ export default function Authenticated({ user, header, children }) {
                                     </span>
                                 </RouteLink>
                             </li>
-                            <li
+                            {/* <li
                                 className={`flex hover:bg-gray-700 duration-200 rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 mt"
                                         } `}
                             >
@@ -119,7 +116,7 @@ export default function Authenticated({ user, header, children }) {
                                         Cashier
                                     </span>
                                 </RouteLink>
-                            </li>
+                            </li> */}
 
                             <li
                                 className={`flex hover:bg-gray-700 duration-200 rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 mt"
