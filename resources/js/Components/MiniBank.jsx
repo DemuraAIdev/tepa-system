@@ -31,7 +31,7 @@ const items2 = {
 
 const Travel = () => {
     return (
-        <div id='minibank' className="bg-white min-h-[80vh] w-full flex md:flex-row flex-col items-center justify-center font-body">
+        <div id='minibank' className=" min-h-[80vh] w-full flex md:flex-row flex-col items-center justify-center font-body">
             <motion.div
                 className="flex flex-col gap-5 md:w-[50%] p-7 lg:mr-[5em] md:order-2 order-2"
                 variants={items}

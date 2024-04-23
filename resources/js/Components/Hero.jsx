@@ -85,7 +85,7 @@ const Hero = () => {
             <h1 className='text-4xl font-body font-bold text-indigo-500'>
                 <span ref={el} />
             </h1>
-            <p className='text-justify text-gray-800'>
+            <p className='text-justify '>
                 Technopark, our school's multifunctional resource center, is dedicated to providing a seamless and enhanced school experience. From high-quality uniforms and comprehensive office supplies to electronics and efficient fee payment through the mini bank, along with photocopy services and expert educational travel planning, Tec   hnopark is your one-stop destination for academic and administrative support, aiming to elevate every aspect of your school journey.
 
             </p>
@@ -97,7 +97,7 @@ const Hero = () => {
                 </ScrollLink>
             </div>
             <div className='w-fit flex gap-4'>
-                <a href='https://www.facebook.com/Smkn1KotaBengkulu/?locale=id_ID'  aria-label='fesfsefesf' className='whitespace-no-wrap overflow-hidden' target='_blank' rel='noopener noreferrer'>
+                <a href='https://www.facebook.com/Smkn1KotaBengkulu/?locale=id_ID' aria-label='fesfsefesf' className='whitespace-no-wrap overflow-hidden' target='_blank' rel='noopener noreferrer'>
                     <motion.div
                         className='text-sm text-white rounded-full bg-indigo-600 p-2'
                         variants={items}
@@ -108,7 +108,7 @@ const Hero = () => {
                     </motion.div>
                 </a>
 
-                <a href='https://www.instagram.com/smkn1kotabengkulu/'  aria-label='fesfsefesf' target='_blank' rel='noopener noreferrer'>
+                <a href='https://www.instagram.com/smkn1kotabengkulu/' aria-label='fesfsefesf' target='_blank' rel='noopener noreferrer'>
                     <motion.div
                         className='text-sm text-white rounded-full bg-pink-600 p-2'
                         variants={items2}
