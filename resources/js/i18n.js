@@ -26,7 +26,7 @@ i18next
         backend: {
             loadPath: "./lang/{{lng}}/{{ns}}.json",
         },
-        lng: "id",
+        lng: "en",
     });
 
 export default i18next;

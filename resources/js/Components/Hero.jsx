@@ -4,6 +4,7 @@ import Typed from "typed.js";
 import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa6";
 import { motion } from "framer-motion";
 import { Link as ScrollLink } from "react-scroll";
+// Translation
 import { useTranslation } from "react-i18next";
 
 const items = {
@@ -60,6 +61,7 @@ const Hero = () => {
 
     // Create reference to store the DOM element containing the animation
     const el = React.useRef(null);
+    // Translation
     const { t, i18n } = useTranslation(["global"]);
 
     React.useEffect(() => {
@@ -86,7 +88,7 @@ const Hero = () => {
             <h1 className="text-4xl font-body font-bold text-indigo-500">
                 <span ref={el} />
             </h1>
-            <p className="text-justify ">{t("welcome")}</p>
+            <p className="text-justify ">{t("header.description")}</p>
             <div>
                 <ScrollLink
                     to="cards"
@@ -97,7 +99,7 @@ const Hero = () => {
                     duration={500}
                 >
                     <button className="btn border-indigo-500 text-white hover:text-white font-bold bg-indigo-600 hover:scale-[1.05] ">
-                        Read More!
+                        {t("header.button")}
                     </button>
                 </ScrollLink>
             </div>

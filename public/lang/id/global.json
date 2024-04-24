@@ -1,3 +1,41 @@
 {
-    "welcome": "ini indo"
+    "header": {
+        "description": "Technopark, pusat sumber daya multifungsi sekolah kita, bertujuan memberikan pengalaman sekolah yang lancar dan ditingkatkan. Dari seragam berkualitas tinggi dan perlengkapan kantor yang lengkap hingga elektronik dan pembayaran biaya yang efisien melalui mini bank, serta layanan fotokopi dan perencanaan perjalanan pendidikan yang ahli, Technopark adalah destinasi satu atap untuk dukungan akademis dan administratif, dengan tujuan meningkatkan setiap aspek perjalanan sekolahmu.",
+        "button": "Baca  selengkapnya"
+    },
+    "card_selection": {
+        "title": "Jelajahi Semua Layanan Terbaik Kami",
+        "second_title": "Yang Tersedia",
+        "subtitle": "Temukan semua yang kamu butuhkan di satu tempat - perlengkapan sekolah, layanan travel, dan pembayaran iuran yang aman.",
+        "card_one": "K-One and Travel",
+        "card_one_subtitle": "Pilih K-One and Travel untuk perjalanan pendidikan yang menginspirasi. Nikmati perjalanan sekolah yang dikelola secara profesional untuk pengalaman belajar yang tak terlupakan.",
+        "card_two": "Bank Mini",
+        "card_two_subtitle": "Andalkan Bank Mini Sekolah kita untuk setor biaya yang aman dan teratur, bikin tenang hati siswa dan orang tua.",
+        "card_three": "Perlengkapan Sekolah",
+        "card_three_subtitle": "Buka potensimu dengan alat yang tepat. Toko perlengkapan tulis sekolah kami menyediakan kunci untuk pembelajaran yang teratur dan sukses."
+    },
+    "travel": {
+        "title": "K-One and Travel",
+        "description": "K-One and Travel adalah layanan terkemuka di Technopark yang bertujuan menyediakan solusi perjalanan untuk sekolah dan individu lainnya. Selain itu, ini juga menjadi tempat pelatihan bagi siswa yang mengkhususkan diri dalam ULP (Business Services and Tourism), menawarkan lingkungan yang kondusif untuk mengasah keterampilan para pembelajar muda. Tempat ini tidak hanya menjamin pengaturan perjalanan yang efisien, tetapi juga memberikan kontribusi yang signifikan untuk pengembangan pendidikan bagi siswa yang mengejar kursus ULP."
+    },
+    "mini_bank": {
+        "title": "Bank Mini",
+        "subtitle": "Bank Mini merupakan kegiatan perbankan yang terletak di SMK Negeri 1 Kota Bengkulu. Mini bank juga merupakan salah satu sumber belajar dan fasilitas pelatihan bagi siswa jurusan Akuntansi dan Keuangan Instansi dalam praktik penerapan pengetahuan akuntansi.",
+        "another_sub": "Bank Mini adalah laboratorium akuntansi yang digunakan sebagai tempat pembayaran keuangan siswa dan mengakomodasi dana dari semua siswa SMK Negeri 1 Kota Bengkulu. Setiap hari, Mini bank mengelola berbagai transaksi keuangan menggunakan sistem manual dalam mencatat keuangan menggunakan hanya buku besar dan sistem digital melalui media komputer."
+    },
+    "best_item": {
+        "title": "Jelajahi Semua Produk terbaik Kami",
+        "title_two": "yang Tersedia!",
+        "subtitle": "Temukan perlengkapan sekolah paling populer di Tepa, mulai dari seragam berkualitas tinggi hingga elektronik canggih.",
+        "button": "Lihat Semua Produk"
+    },
+    "faq": {
+        "title": "Dapatkan Jawaban Tentang Pertanyaan Yang Paling sering Ditanyakan Tentang Technopark",
+        "q1": "Apa itu Technopark?",
+        "q2": "Apa yang di jual di Technopark?",
+        "q3": "Dimana lokasi Technopark?",
+        "a1": "Technopark adalah pusat sumber daya serba bisa yang ada di kampus sekolah kita, yang menawarkan beragam layanan dan produk penting. Mulai dari seragam sekolah hingga perlengkapan kantor, elektronik, dan bahkan ada mini bank untuk transaksi yang aman, ditambah kenyamanan dari K-One Travel. Ini adalah tempat tujuanmu yang lengkap untuk semua kebutuhan akademis dan administratif. Dirancang untuk menyederhanakan dan meningkatkan pengalaman sekolah secara keseluruhan, Technopark memberikan solusi komprehensif bagi siswa, orang tua, dan staf, memastikan kenyamanan dan efisiensi di satu lokasi sentral",
+        "a2": "Technopark menawarkan beragam produk dan layanan, termasuk seragam sekolah, perlengkapan kantor, elektronik, pembayaran biaya yang aman melalui mini bank, dan layanan perjalanan dari K-One Travel",
+        "a3": "Technopark terletak di dalam SMKN 1 Kota Bengkulu, berdampingan dengan ruang BKK (Bursa Kerja Khusus)"
+    }
 }

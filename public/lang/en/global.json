@@ -1,3 +1,40 @@
 {
-    "welcome": "ini inggris"
+    "header": {
+        "description": "Technopark, our school's multifunctional resource center, is dedicated to providing a seamless and enhanced school experience. From high-quality uniforms and comprehensive office supplies to electronics and efficient fee payment through the mini bank, along with photocopy services and expert educational travel planning, Tec   hnopark is your one-stop destination for academic and administrative support, aiming to elevate every aspect of your school journey.",
+        "button": "Read more"
+    },
+    "card_selection": {
+        "title": "Explore All of Our Amazing",
+        "second_title": "Services Available",
+        "subtitle": "Explore convenience in one place – office supplies, travel services, and secure fee payments.",
+        "card_one": "K-One and Travel",
+        "card_one_subtitle": "Choose K-One and Travel for educational journeys that inspire. Expertly guided school trips for unforgettable learning.",
+        "card_two": "Mini Bank",
+        "card_two_subtitle": "Trust our School's Mini Bank for secure and organized fee deposits, providing peace of mind to students and parents.",
+        "card_three": "Perlengkapan Sekolah.",
+        "card_three_subtitle": "Unlock your potential with the right tools. Our school's stationery store provides the key to organized and successful learning."
+    },
+    "travel": {
+        "title": "K-One and Travel",
+        "description": "K-One and Travel is a distinguished service within Technopark, dedicated to providing travel solutions for schools and other individuals. Moreover, it serves as a training ground for students specializing in ULP (Business Services and Tourism.), offering a conducive environment for honing the skills of young learners. This establishment not only ensures efficient travel arrangements but also contributes significantly to the educational development of students pursuing ULP courses."
+    },
+    "mini_bank": {
+        "title": "Mini Bank",
+        "subtitle": "Mini bank is a banking activity located at SMK Negeri 1 Kota Bengkulu. Mini Bank is also one of the learning resources and training facilities for students majoring in Accounting and Institutional Finance in practicing the application of accounting knowledge. Mini Bank is an accounting laboratory that is used as a place for student financial payments and accommodates funds from all students of SMK Negeri 1 Bengkulu City. Every day the Mini Bank manages various financial transactions using a manual system in recording finances using only ledgers and digital systems through computer media."
+    },
+    "best_item": {
+        "title": "Check Out Our Best Selling Items",
+        "title_two": "Available Right Now!",
+        "subtitle": "Discover Tepa's most popular school essentials, from top-quality uniforms to state-of-the-art electronics.",
+        "button": "See All Items"
+    },
+    "faq": {
+        "title": "Get quick answers to common questions about Technopark",
+        "q1": "What is Technopark?",
+        "q2": "What does the Technopark sell?",
+        "q3": "Where is the location of the Technopark?",
+        "a1": "Technopark is a multifaceted resource center located within our school's campus, offering a wide range of essential services and products. From school uniforms to office supplies, electronics, a mini bank for secure transactions, and the convenience of K-One Travel, Technopark is your one-stop destination for all your academic and administrative needs. It is designed to streamline and enhance the overall school experience, providing a comprehensive solution for students, parents, and staff, ensuring convenience and efficiency in one central location.",
+        "a2": "Technopark offers a diverse range of products and services, including school uniforms, office supplies, electronics, secure fee payment through a mini bank, and travel services provided by K-One Travel.",
+        "a3": "The Technopark is located inside SMKN 1 Bengkulu City, adjacent to the BKK (Specialized Job Fair) room."
+    }
 }
