@@ -4,19 +4,31 @@ import { Link } from '@inertiajs/react';
 import Brand from './Brand';
 import { Link as ScrollLink } from 'react-scroll';
 import { FaBarsStaggered } from "react-icons/fa6";
+import { useTranslation } from 'react-i18next'
+import { FaGlobe } from "react-icons/fa6/index.esm";
 
 export default function Navbar() {
 
     // For responsive navbar
     let [open, setOpen] = useState(false);
 
+    // change language
+    const { t, i18n } = useTranslation()
+    const changeLanguage = (lng) => {
+        i18n.changeLanguage(lng);
+    }
+
     return (
         <div className="shadow-md w-full fixed top-0 left-0">
             <div className="md:flex items-center justify-between py-4 px-7 md:px-[7.5em] bg-gray-200 dark:bg-gray-900 z-[2]">
                 <div className="font-bold  text-2xl cursor-pointer flex items-center font-body text-gray-800">
+
                     <a href="#" className="text-3xl text-indigo-700 mr-1">
                         <Brand />
                     </a>
+                    <button onClick={() => changeLanguage(i18n.language === 'en' ? 'id' : 'en')} className="btn">
+                        {i18n.language.toUpperCase()}
+                    </button>
                 </div>
                 <div onClick={() => setOpen(!open)} className="text-xl absolute right-8 top-6 cursor-pointer md:hidden">
                     <FaBarsStaggered name="{open ? 'close':'menu'}" />

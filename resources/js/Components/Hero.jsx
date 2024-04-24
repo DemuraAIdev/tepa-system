@@ -67,9 +67,9 @@ const Hero = () => {
     React.useEffect(() => {
         const typed = new Typed(el.current, {
             strings: [
-                "Welcome to Raflesia Technopark's Official Website!",
-                "Your All-in-One School Resource Center",
-                "Unlocking School Convenience",
+                t("typed.one"),
+                t("typed.two"),
+                t("typed.three"),
             ],
             typeSpeed: 50,
             smartBackspace: true,
@@ -81,7 +81,7 @@ const Hero = () => {
             // Destroy Typed instance during cleanup to stop animation
             typed.destroy();
         };
-    }, []);
+    }, [i18n.language]);
 
     return (
         <div className="flex flex-col gap-5 md:w-[50%] p-7 lg:ml-[5em] order-2 md:order-1  rounded-lg">
