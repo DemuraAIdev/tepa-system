@@ -49,7 +49,7 @@ const Travel = () => {
                 <h1 className="text-4xl font-body font-bold text-indigo-500">
                     {t("mini_bank.title")}
                 </h1>
-                <p className="text-justify text-gray-800">
+                <p className="text-justify ">
                     {t("mini_bank.subtitle")}
                     {t("mini_bank.another_sub")}
                 </p>

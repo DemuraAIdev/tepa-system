@@ -10,15 +10,17 @@ import Navbar from "@/Components/Navbar";
 import { Head } from "@inertiajs/react";
 import MyThree from "@/Components/map";
 
+
 export default function Welcome({ items }) {
     return (
         <>
             <Head title="Home" />
+            <Navbar />
             <div
                 id="home"
-                className="mt-[4em] md:bg-[url(/Image/HomeWaveStacked.svg)] bg-no-repeat lg:bg-bottom bg-center bg-cover min-h-screen w-full bg-white "
+                className="md:bg-[url(/Image/HomeWaveStacked.svg)] bg-no-repeat lg:bg-bottom bg-center bg-cover min-h-screen w-full "
             >
-                <div className="w-full min-h-screen flex flex-col md:flex-row items-center justify-center ">
+                <div className="w-full min-h-screen flex flex-col md:flex-row items-center justify-center bg-base-100 ">
                     <Hero />
 
                     <div className="p-7 lg:mr-[5em] md:w-[50%] order-1 md:order-2 ">
@@ -41,7 +43,8 @@ export default function Welcome({ items }) {
             <BestItemsSection item={items} />
             <FaqSection />
             <Footer />
-            <Navbar />
+
+            {/*  */}
         </>
     );
 }

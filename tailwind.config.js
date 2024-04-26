@@ -22,7 +22,9 @@ export default {
         },
     },
     daisyui: {
-        themes: ["dark"],
+        themes: false,
+        darkTheme: ["dark"],
+        themes: ["dark", "light"],
     },
     // eslint-disable-next-line no-undef
     plugins: [require("daisyui")],

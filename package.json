@@ -35,6 +35,7 @@
         "react-icons": "^4.11.0",
         "react-scroll": "^1.9.0",
         "recharts": "^2.9.0",
+        "theme-change": "^2.5.0",
         "three": "^0.158.0",
         "typed.js": "^2.0.16",
         "vanilla-tilt": "^1.8.1"

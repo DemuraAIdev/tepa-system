@@ -47,6 +47,9 @@ dependencies:
   recharts:
     specifier: ^2.9.0
     version: 2.9.0(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)
+  theme-change:
+    specifier: ^2.5.0
+    version: 2.5.0
   three:
     specifier: ^0.158.0
     version: 0.158.0
@@ -2423,6 +2426,10 @@ packages:
     resolution: {integrity: sha512-iOiPUo/BGnZ6+54OsWxZidGCsdU8YbE4PSpdPinp7DeMtUJNJBoJ/ouUSTJjHkh1KntHaltHl/gDs2FC4i5+Nw==}
     dependencies:
       utrie: 1.0.2
+    dev: false
+
+  /theme-change@2.5.0:
+    resolution: {integrity: sha512-B/UdsgdHAGhSKHTAQnxg/etN0RaMDpehuJmZIjLMDVJ6DGIliRHGD6pODi1CXLQAN9GV0GSyB3G6yCuK05PkPQ==}
     dev: false
 
   /thenify-all@1.6.0:

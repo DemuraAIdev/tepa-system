@@ -28,10 +28,10 @@ const Login = () => {
                     }
 
                     <div className="judul text-center p-2">
-                        <h1 className="text-2xl font-body font-bold text-gray-800">
+                        <h1 className="text-2xl font-body font-bold ">
                             Login
                         </h1>
-                        <p className="text-gray-700">
+                        <p className="">
                             Type your details to login to your Admin account
                         </p>
                     </div>
@@ -74,7 +74,7 @@ const Login = () => {
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td className="pt-4 text-gray-800 font-heading font-medium hover:underline flex">
+                                        <td className="pt-4  font-heading font-medium hover:underline flex">
                                             <Link href={route('password.request')}>Reset Password</Link>
                                         </td>
                                     </tr>
@@ -83,7 +83,7 @@ const Login = () => {
                                     <tr>
                                         <td className="pt-4">
                                             <input
-                                                className=" btn text-gray-100 bg-indigo-500 border-[1px] border-indigo-500 hover:bg-indigo-600 hover:border-indigo-600 p-2 rounded-md w-full"
+                                                className=" btn  bg-indigo-500 border-[1px] border-indigo-500 hover:bg-indigo-600 hover:border-indigo-600 p-2 rounded-md w-full"
                                                 type="submit"
                                                 id="submit"
                                                 name="submit"
