@@ -35,7 +35,7 @@ const Travel = () => {
     return (
         <div
             id="minibank"
-            className=" min-h-[80vh] w-full flex md:flex-row flex-col items-center justify-center font-body"
+            className=" min-h-fit w-full flex md:flex-row flex-col items-center justify-center md:pb-7 md:pt-4 font-body"
         >
             <motion.div
                 className="flex flex-col gap-5 md:w-[50%] p-7 lg:mr-[5em] md:order-2 order-2"
@@ -49,10 +49,7 @@ const Travel = () => {
                 <h1 className="text-4xl font-body font-bold text-indigo-500">
                     {t("mini_bank.title")}
                 </h1>
-                <p className="text-justify ">
-                    {t("mini_bank.subtitle")}
-                    {t("mini_bank.another_sub")}
-                </p>
+                <p className="text-justify ">{t("mini_bank.subtitle")}</p>
             </motion.div>
 
             <motion.div

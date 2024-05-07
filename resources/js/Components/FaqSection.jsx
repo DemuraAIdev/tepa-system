@@ -22,7 +22,7 @@ const FaqSection = () => {
                 data-aos="flip-up"
                 data-aos-duration="700"
             >
-                <div className="collapse collapse-arrow  border-[1px]  ">
+                <div className="collapse collapse-arrow  border-[1px] border-gray-400">
                     <input
                         type="radio"
                         name="my-accordion-1"

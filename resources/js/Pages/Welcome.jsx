@@ -10,7 +10,6 @@ import Navbar from "@/Components/Navbar";
 import { Head } from "@inertiajs/react";
 import MyThree from "@/Components/map";
 
-
 export default function Welcome({ items }) {
     return (
         <>
