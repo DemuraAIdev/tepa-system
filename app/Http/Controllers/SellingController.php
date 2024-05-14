@@ -42,6 +42,15 @@ class SellingController extends Controller
                 'subtotal' => $item['subtotal'],
 
             ]);
+
+            Keluars::create([
+                'admin_id' => $validated['user_id'],
+                'item_id' => $item['item_id'],
+                'jumlah' => $item['qty'],
+                'total' => Items::where('id', $item['item_id'])->first()->jumlah - $item['qty'],
+            ]);
+
+            Items::where('id', $item['item_id'])->decrement('jumlah', $item['qty']);
         }
 
 

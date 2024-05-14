@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Transaction;
 use App\Models\Pelanggan;
+use Inertia\Inertia;
 use App\Models\Order;
 
 class InvoiceController extends Controller
@@ -14,10 +15,8 @@ class InvoiceController extends Controller
      */
     public function index()
     {
-        return view('invoice.index', [
-            'active' => 'invoice',
-            'breadcrumb' => 'invoice',
-            'transactions' => Transaction::get(),
+        return Inertia::render('Admins/Invoice', [
+            'transaction' => Transaction::get(),
         ]);
     }
     /**
@@ -37,7 +36,8 @@ class InvoiceController extends Controller
     {
         Order::where('kode_inv', $transaction->kode_inv)->delete();
         Transaction::destroy($transaction->id);
-        return redirect('/dashboard/invoice')->with('success', 'Invoice telah dihapus!');
+
+        return redirect('/invoice')->with('success', 'Invoice telah dihapus!');
     }
     /**
      * Remove the specified resource from storage.

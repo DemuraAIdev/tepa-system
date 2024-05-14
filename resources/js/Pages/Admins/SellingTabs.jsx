@@ -1,9 +1,10 @@
 // src/components/Tab.js
-import FirstTab from "@/Components/FirstTab";
-import SecondTab from "@/Components/SecondTab";
+
 import { useState, useEffect } from "react";
 import AuthLayout from "@/Layouts/AuthLayout";
 import axios from 'axios';
+import { Link as RouteLink, usePage } from '@inertiajs/react';
+import { Head } from '@inertiajs/react';
 
 const SellingCashier = ({ items, kode_inv }) => {
     // [{
@@ -24,17 +25,20 @@ const SellingCashier = ({ items, kode_inv }) => {
     const [itemId, setItemId] = useState('');
 
     const addItem = (item, kode_inv) => {
-        const existingItem = addedItems.find(i => i.id === item.id);
-        if (existingItem) {
-            if (existingItem.buyAmount < item.jumlah) {
-                existingItem.buyAmount += 1;
-                setAddedItems([...addedItems]);
+        setAddedItems((prevItems) => {
+            const existingItem = prevItems.find(i => i.id === item.id);
+            if (existingItem) {
+                if (existingItem.buyAmount < item.jumlah) {
+                    existingItem.buyAmount += 1;
+                    return [...prevItems];
+                } else {
+                    alert('Cannot add more items than available in stock');
+                    return prevItems;
+                }
             } else {
-                alert('Cannot add more items than available in stock');
+                return [...prevItems, { ...item, buyAmount: 1 }];
             }
-        } else {
-            setAddedItems([...addedItems, { ...item, buyAmount: 1 }]);
-        }
+        });
         calculateGrandTotal();
     };
     const handleQuantityChange = (id, newQuantity) => {
@@ -77,11 +81,13 @@ const SellingCashier = ({ items, kode_inv }) => {
         }
         setItemId(''); // reset the input field
     };
+    const user = usePage().props.auth.user;
 
     const handleSubmit = event => {
         event.preventDefault();
         const items = addedItems.map(item => ({
             nama_barang: item.name,
+            item_id: item.id,
             qty: item.buyAmount,
             harga_jual: item.harga,
             subtotal: item.buyAmount * item.harga,
@@ -89,13 +95,15 @@ const SellingCashier = ({ items, kode_inv }) => {
 
         axios.post('/selling', {
             items: items,
+            user_id: user.id,
             total: grandTotal,
             kode_inv: kode_inv
         })
             .then(response => {
                 // handle success
+                setAddedItems([]);
                 if (response.data.success) {
-                    setAddedItems([]);
+
                     setGrandTotal(0);
                     setTransactionID(response.data.transaction_id);
                     document.getElementById("my_modal_4").showModal()
@@ -112,7 +120,7 @@ const SellingCashier = ({ items, kode_inv }) => {
 
 
     return (
-        <div className="bg-[#171d23] md:w-full  min-h-[90vh] p-7 flex flex-col items-center justify-center font-body">
+        <><Head title="Invoice" /><div className="bg-[#171d23] md:w-full  min-h-[90vh] p-7 flex flex-col items-center justify-center font-body">
             <div className="bg-[#1D232A] p-7 flex flex-col gap-7 rounded-xl shadow-md w-10/12">
                 <div className="text-center font-bold text-white text-2xl">
                     <h1 className="uppercase font-body">Item Registration</h1>
@@ -128,17 +136,14 @@ const SellingCashier = ({ items, kode_inv }) => {
                             placeholder="Here goes the item's id..."
                             className="input input-bordered border-[1px] border-gray-700 md:w=[75%] px-4 py-2 bg-[#171d23] text-sm"
                             value={itemId}
-                            onChange={(e) => setItemId(e.target.value)}
-                        />
+                            onChange={(e) => setItemId(e.target.value)} />
                         <button className="btn border-[1px] border-gray-700 hover:text-white hover:border-gray-500 text-sm">
                             Ok
                         </button>
                     </form>
                     <button
                         className="btn text-gray-300 border-[1px] border-gray-700"
-                        onClick={() =>
-                            document.getElementById("my_modal_3").showModal()
-                        }
+                        onClick={() => document.getElementById("my_modal_3").showModal()}
                     >
                         Add Items
                     </button>
@@ -170,7 +175,7 @@ const SellingCashier = ({ items, kode_inv }) => {
                                         {itemss.map((item) => (
                                             <tr key={item.id}>
                                                 <td>{item.name}</td>
-                                                <td>{item.harga}</td>
+                                                <td>{item.harga.toLocaleString('id-ID', { style: 'currency', currency: 'IDR' })}</td>
                                                 <td>{item.jumlah}</td>
                                                 <td>{item.barcode}</td>
                                                 <td>
@@ -210,38 +215,38 @@ const SellingCashier = ({ items, kode_inv }) => {
                             <tbody>
                                 {/* row 1 */}
                                 {/* <tr>
-                                    <td>1</td>
-                                    <td>
-                                        <div className="flex items-center gap-3">
-                                            <div className="avatar">
-                                                <div className="mask mask-squircle w-12 h-12">
-                                                    <img
-                                                        src="https://img.daisyui.com/tailwind-css-component-profile-2@56w.png"
-                                                        alt="Avatar Tailwind CSS Component"
-                                                    />
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <div className="font-bold">
-                                                    Sempak Rimuru
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <input
-                                            type="number"
-                                            className="focus:outline-none px-3 py-2 rounded-md bg-[#171d23] border-[1px] border-gray-700"
-                                        />
-                                    </td>
-                                    <td>500000</td>
-                                    <td>total</td>
-                                    <th>
-                                        <button className="btn bg-red-500 text-white font-bold btn-xs">
-                                            Delete
-                                        </button>
-                                    </th>
-                                </tr> */}
+        <td>1</td>
+        <td>
+            <div className="flex items-center gap-3">
+                <div className="avatar">
+                    <div className="mask mask-squircle w-12 h-12">
+                        <img
+                            src="https://img.daisyui.com/tailwind-css-component-profile-2@56w.png"
+                            alt="Avatar Tailwind CSS Component"
+                        />
+                    </div>
+                </div>
+                <div>
+                    <div className="font-bold">
+                        Sempak Rimuru
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            <input
+                type="number"
+                className="focus:outline-none px-3 py-2 rounded-md bg-[#171d23] border-[1px] border-gray-700"
+            />
+        </td>
+        <td>500000</td>
+        <td>total</td>
+        <th>
+            <button className="btn bg-red-500 text-white font-bold btn-xs">
+                Delete
+            </button>
+        </th>
+    </tr> */}
                                 {addedItems.map((item, index) => (
                                     <tr key={item.id}>
                                         <td>{index + 1}</td>
@@ -251,8 +256,7 @@ const SellingCashier = ({ items, kode_inv }) => {
                                                 type="number"
                                                 value={item.buyAmount}
                                                 onChange={(e) => handleQuantityChange(item.id, Number(e.target.value))}
-                                                className="focus:outline-none px-3 py-2 rounded-md bg-[#171d23] border-[1px] border-gray-700"
-                                            />
+                                                className="focus:outline-none px-3 py-2 rounded-md bg-[#171d23] border-[1px] border-gray-700" />
                                         </td>
                                         <td>{item.harga.toLocaleString('id-ID', { style: 'currency', currency: 'IDR' })}</td>
                                         <td>{(item.buyAmount * item.harga).toLocaleString('id-ID', { style: 'currency', currency: 'IDR' })}</td>
@@ -282,8 +286,7 @@ const SellingCashier = ({ items, kode_inv }) => {
                         name="total"
                         value={grandTotal.toLocaleString('id-ID', { style: 'currency', currency: 'IDR' })}
                         className="input input-bordered border-[1px] border-gray-700 md:w=[75%] px-4 py-2 bg-[#171d23] text-sm "
-                        disabled
-                    />
+                        disabled />
                     <form onSubmit={handleSubmit}>
                         <button className="uppercase font-bold btn border-gray-700 hover:border-gray-500">
                             Save Transaction
@@ -294,9 +297,10 @@ const SellingCashier = ({ items, kode_inv }) => {
                         <div className="modal-box w-11/12 max-w-xl">
                             <form method="dialog">
                                 {/* if there is a button in form, it will close the modal */}
-                                <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
-                                    ✕
-                                </button>
+                                {/* <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" onClick={() => }>
+        
+    </button> */}
+                                <RouteLink href={route('selling')} className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</RouteLink>
                             </form>
                             <div>
                                 <h1 className="pb-4 font-bold text-xl text-center">
@@ -319,7 +323,7 @@ const SellingCashier = ({ items, kode_inv }) => {
                     </dialog>
                 </div>
             </div>
-        </div>
+        </div></>
     );
 };
 

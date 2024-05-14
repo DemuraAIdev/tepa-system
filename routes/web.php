@@ -72,6 +72,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/selling', [SellingController::class, 'store'])->name('selling.store');
 
     Route::get('/invoice/{transaction}/print', [InvoiceController::class, 'print'])->middleware('auth');
+    route::get('/invoice', [InvoiceController::class, 'index'])->name('invoice');
+    route::delete('/invoice/{transaction}', [InvoiceController::class, 'destroy'])->name('invoice.destroy');
 
 
 

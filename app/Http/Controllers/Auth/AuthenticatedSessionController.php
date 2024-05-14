@@ -34,21 +34,21 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request): RedirectResponse
     {
-       
+
 
         $request->authenticate();
 
         $request->session()->regenerate();
-         // event login and logout
-         $admin = Auth::guard('web')->user();
+        // event login and logout
+        $admin = Auth::guard('web')->user();
 
-         $audits = new Audits();
-         $audits->admin_id = $admin->id;
-         $audits->action = 'login';
-         $audits->timestamps = now();
-         $audits->save();
+        $audits = new Audits();
+        $audits->admin_id = $admin->id;
+        $audits->action = 'login';
+        $audits->timestamps = now();
+        $audits->save();
 
-        return Gate::allows('isSuperAdmin') ? redirect('/dashboard') : redirect('/sellingz');
+        return Gate::allows('isSuperAdmin') ? redirect('/dashboard') : redirect('/selling');
     }
 
     /**

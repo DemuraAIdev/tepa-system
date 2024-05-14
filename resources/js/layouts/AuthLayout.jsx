@@ -103,6 +103,20 @@ export default function Authenticated({ user, header, children }) {
                                     </span>
                                 </RouteLink>
                             </li>
+                            <li
+                                className={`flex hover:bg-gray-700 duration-200 rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 mt"
+                                        } `}
+                            >
+                                <RouteLink href={route("invoice")} className='flex gap-4'>
+                                    <div className='text-lg'>
+                                        <FiDollarSign />
+                                    </div>
+                                    <span className={`${!open && "hidden"} origin-left duration-200`}>
+
+                                        Invoice
+                                    </span>
+                                </RouteLink>
+                            </li>
                             {/* <li
                                 className={`flex hover:bg-gray-700 duration-200 rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 mt"
                                         } `}

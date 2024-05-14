@@ -26,6 +26,8 @@ class StoreTransactionRequest extends FormRequest
             'items' => 'required|array',
             'total' => 'required|numeric',
             'kode_inv' => 'required|string',
+            'user_id' => 'required|numeric',
+
         ];
     }
 }
