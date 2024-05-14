@@ -7,48 +7,53 @@ use Inertia\Inertia;
 use App\Models\Masuks;
 use App\Models\Keluars;
 use App\Models\Items;
+use Haruncpi\LaravelIdGenerator\IdGenerator;
+use App\Http\Requests\StoreTransactionRequest;
+use App\Models\Order;
+use App\Models\Transaction;
 
 
 class SellingController extends Controller
 {
     public function index()
     {
-        return Inertia::render('Admins/SellingTabs');
+        return Inertia::render('Admins/SellingTabs', [
+            'items' => Items::get(),
+            'kode_inv' => IdGenerator::generate(['table' => 'transactions', 'field' => 'kode_inv', 'length' => 10, 'prefix' => 'INV-']),
+        ]);
     }
 
-    public function store(Request $request)
+    public function store(StoreTransactionRequest $request)
     {
-        // validation
-        $request->validate([
-            'productid' => 'required',
-            'jumlah' => 'required|numeric|min:0',
-        ]);
 
-        // store
-        if ($request->type == 'in') {
-            $item = Items::where('barcode', $request->productid)->first();
-            Masuks::create([
-                'admin_id' => $request->user()->id,
-                'item_id' => $item->id,
-                'jumlah' => $request->jumlah,
-                'total' => $item->jumlah + $request->jumlah,
-            ]);
+        $validated = $request->validated();
 
-            $item->jumlah = $item->jumlah + $request->jumlah;
-            $item->save();
-        } else {
-            $item = Items::where('barcode', $request->productid)->first();
-            Keluars::create([
-                'admin_id' => $request->user()->id,
-                'item_id' => $item->id,
-                'jumlah' => $request->jumlah,
-                'total' => $item->jumlah - $request->jumlah,
+        // $validated now contains the validated data from the request
+        // You can now proceed with your logic for storing the transaction
+
+
+        // for each item in the items array, you can create a new Order
+        foreach ($validated['items'] as $item) {
+            Order::create([
+                'kode_inv' => $validated['kode_inv'],
+                'nama_barang' => $item['nama_barang'],
+                'qty' => $item['qty'],
+                'harga_jual' => $item['harga_jual'],
+                'subtotal' => $item['subtotal'],
+
             ]);
-            $item->jumlah = $item->jumlah - $request->jumlah;
-            $item->save();
         }
 
-        // redirect
-        return to_route('selling');
+
+        $transaction = Transaction::create([
+            'kode_inv' => $validated['kode_inv'],
+            'total' => $validated['total'],
+        ]);
+
+        // return response true
+        return response()->json(['success' => true, 'transaction_id' => $transaction->id]);
+
     }
+
+
 }

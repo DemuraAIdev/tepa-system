@@ -12,6 +12,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminAddController;
 use App\Http\Controllers\SellingController;
 use App\Http\Controllers\CashierController;
+use App\Http\Controllers\InvoiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,9 +71,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/selling', [SellingController::class, 'index'])->name('selling');
     Route::post('/selling', [SellingController::class, 'store'])->name('selling.store');
 
-    // Cashier
-    Route::get('/cashier', [CashierController::class, 'index'])->name('cashier');
-    Route::post('/cashier', [CashierController::class, 'store'])->name('cashier.store');
+    Route::get('/invoice/{transaction}/print', [InvoiceController::class, 'print'])->middleware('auth');
+
 
 
 
