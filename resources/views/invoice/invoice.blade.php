@@ -50,7 +50,7 @@
                 <tr align='center'>
                     <td width='20%'>Nama Barang</td>
                     <td width='4%'>Qty</td>
-                    <td width='4%'>Harga</td>
+                    <td width='10%'>Harga</td>
                     <td width='7%'>Subtotal</td>
 
 
