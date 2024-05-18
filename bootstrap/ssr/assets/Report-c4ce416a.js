@@ -1,5 +1,5 @@
 import { jsxs, Fragment, jsx } from "react/jsx-runtime";
-import { A as Authenticated } from "./AuthLayout-c7225f91.js";
+import { A as Authenticated } from "./AuthLayout-6232ca48.js";
 import { Head } from "@inertiajs/react";
 import { AiFillPrinter } from "react-icons/ai/index.esm.js";
 import { useRef, useState } from "react";
@@ -10,9 +10,14 @@ import "react-icons/fa6/index.esm.js";
 import "react-icons/fi/index.esm.js";
 import "react-icons/ri/index.esm.js";
 import "react-icons/fa/index.esm.js";
+import "react-icons/md/index.esm.js";
 const Report$1 = (props) => {
   const tableRef = useRef(null);
-  const [data, setData] = useState(Object.values(props.data).sort((a, b) => new Date(a.formatted_created_at) - new Date(b.formatted_created_at)));
+  const [data, setData] = useState(
+    Object.values(props.data).sort(
+      (a, b) => new Date(a.formatted_created_at) - new Date(b.formatted_created_at)
+    )
+  );
   const handleFilterChange = (e) => {
     const { name, value } = e.target;
     const filteredData = Object.values(props.data).filter((item) => {
@@ -30,7 +35,11 @@ const Report$1 = (props) => {
       }
       return false;
     });
-    setData(filteredData.sort((a, b) => new Date(a.formatted_created_at) - new Date(b.formatted_created_at)));
+    setData(
+      filteredData.sort(
+        (a, b) => new Date(a.formatted_created_at) - new Date(b.formatted_created_at)
+      )
+    );
   };
   const { onDownload } = useDownloadExcel({
     currentTableRef: tableRef.current,
@@ -71,10 +80,17 @@ const Report$1 = (props) => {
           }
         )
       ] }),
-      /* @__PURE__ */ jsxs("button", { onClick: onDownload, className: "btn border-[1px] border-gray-700", children: [
-        "Export ",
-        /* @__PURE__ */ jsx(AiFillPrinter, { className: "text-lg" })
-      ] })
+      /* @__PURE__ */ jsx("div", { className: "flex pr-10", children: /* @__PURE__ */ jsxs(
+        "button",
+        {
+          onClick: onDownload,
+          className: "btn border-[1px] border-gray-700 mr-2",
+          children: [
+            "Export ",
+            /* @__PURE__ */ jsx(AiFillPrinter, { className: "text-lg" })
+          ]
+        }
+      ) })
     ] }),
     /* @__PURE__ */ jsx("div", { className: "overflow-x-auto", children: /* @__PURE__ */ jsxs("table", { className: "table table-xs", ref: tableRef, children: [
       /* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { children: [
@@ -87,16 +103,23 @@ const Report$1 = (props) => {
         /* @__PURE__ */ jsx("th", { children: "Harga" }),
         /* @__PURE__ */ jsx("th", { children: "Produk ID" })
       ] }) }),
-      /* @__PURE__ */ jsx("tbody", { children: data.map((item, index) => /* @__PURE__ */ jsxs("tr", { className: item.type === "masuk" ? "bg-green-800" : "bg-red-900", children: [
-        /* @__PURE__ */ jsx("td", { children: item.id }),
-        /* @__PURE__ */ jsx("td", { children: item.item.name }),
-        /* @__PURE__ */ jsx("td", { children: item.type }),
-        /* @__PURE__ */ jsx("td", { children: item.jumlah }),
-        /* @__PURE__ */ jsx("td", { children: item.total }),
-        /* @__PURE__ */ jsx("td", { children: item.formatted_created_at }),
-        /* @__PURE__ */ jsx("td", { children: item.item.harga }),
-        /* @__PURE__ */ jsx("td", { children: item.item.barcode.toString() })
-      ] }, index)) })
+      /* @__PURE__ */ jsx("tbody", { children: data.map((item, index) => /* @__PURE__ */ jsxs(
+        "tr",
+        {
+          className: item.type === "masuk" ? "bg-green-800" : "bg-red-900",
+          children: [
+            /* @__PURE__ */ jsx("td", { children: item.id }),
+            /* @__PURE__ */ jsx("td", { children: item.item.name }),
+            /* @__PURE__ */ jsx("td", { children: item.type }),
+            /* @__PURE__ */ jsx("td", { children: item.jumlah }),
+            /* @__PURE__ */ jsx("td", { children: item.total }),
+            /* @__PURE__ */ jsx("td", { children: item.formatted_created_at }),
+            /* @__PURE__ */ jsx("td", { children: item.item.harga }),
+            /* @__PURE__ */ jsx("td", { children: item.item.barcode.toString() })
+          ]
+        },
+        index
+      )) })
     ] }) })
   ] });
 };

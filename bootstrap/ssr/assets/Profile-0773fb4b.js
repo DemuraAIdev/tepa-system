@@ -1,5 +1,5 @@
 import { jsxs, Fragment, jsx } from "react/jsx-runtime";
-import { A as Authenticated } from "./AuthLayout-c7225f91.js";
+import { A as Authenticated } from "./AuthLayout-6232ca48.js";
 import { useForm, usePage, Head } from "@inertiajs/react";
 import { I as InputError } from "./InputError-75b3a913.js";
 import { useRef } from "react";
@@ -10,6 +10,7 @@ import "react-icons/ai/index.esm.js";
 import "react-icons/fi/index.esm.js";
 import "react-icons/ri/index.esm.js";
 import "react-icons/fa/index.esm.js";
+import "react-icons/md/index.esm.js";
 function UpdatePasswordForm({ className = "" }) {
   const passwordInput = useRef();
   const currentPasswordInput = useRef();

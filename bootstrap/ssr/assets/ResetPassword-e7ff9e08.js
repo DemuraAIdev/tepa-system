@@ -1,26 +1,33 @@
 import { jsxs, Fragment, jsx } from "react/jsx-runtime";
-import { useForm, Head, Link } from "@inertiajs/react";
+import { useForm, Head } from "@inertiajs/react";
 import { T as TextInput } from "./TextInput-2013c4bf.js";
 import { I as InputError } from "./InputError-75b3a913.js";
-import "react";
-const Login = () => {
+import { useEffect } from "react";
+const Login = ({ token, email }) => {
   const { data, setData, post, processing, errors, reset } = useForm({
-    email: "",
-    password: ""
+    token,
+    email,
+    password: "",
+    password_confirmation: ""
   });
+  useEffect(() => {
+    return () => {
+      reset("password", "password_confirmation");
+    };
+  }, []);
   const submit = (e) => {
     e.preventDefault();
-    post(route("login"));
+    post(route("password.store"));
   };
   return /* @__PURE__ */ jsxs(Fragment, { children: [
-    /* @__PURE__ */ jsx(Head, { title: "Log in" }),
-    /* @__PURE__ */ jsx("div", { className: "bg-white h-[100vh] w-full flex items-center justify-center p-7", children: /* @__PURE__ */ jsxs("div", { className: "shadow-cstm2 md:p-7 rounded-xl ", children: [
+    /* @__PURE__ */ jsx(Head, { title: "Reset Password" }),
+    /* @__PURE__ */ jsx("div", { className: " h-[100vh] w-full flex items-center justify-center p-7", children: /* @__PURE__ */ jsxs("div", { className: "shadow-cstm2 md:p-7 rounded-xl ", children: [
       status && /* @__PURE__ */ jsxs("div", { className: "alert alert-info", children: [
         /* @__PURE__ */ jsx("svg", { xmlns: "http://www.w3.org/2000/svg", fill: "none", viewBox: "0 0 24 24", className: "stroke-current shrink-0 w-6 h-6", children: /* @__PURE__ */ jsx("path", { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" }) }),
         /* @__PURE__ */ jsx("span", { children: status })
       ] }),
       /* @__PURE__ */ jsxs("div", { className: "judul text-center p-2", children: [
-        /* @__PURE__ */ jsx("h1", { className: "text-2xl font-body font-bold text-gray-800", children: "Login" }),
+        /* @__PURE__ */ jsx("h1", { className: "text-2xl font-body font-bold text-gray-800", children: "Reset Password" }),
         /* @__PURE__ */ jsx("p", { className: "text-gray-700", children: "Type your details to login to your Admin account" })
       ] }),
       /* @__PURE__ */ jsx("div", { className: "flex items-center justify-center py-7 px-4", children: /* @__PURE__ */ jsxs("form", { onSubmit: submit, children: [
@@ -48,11 +55,22 @@ const Login = () => {
                 id: "password",
                 value: data.password,
                 placeholder: "Enter your password ",
-                autoComplete: "current-password",
+                autoComplete: "new-password",
                 onChange: (e) => setData("password", e.target.value)
               }
             ) }) }),
-            /* @__PURE__ */ jsx("tr", { children: /* @__PURE__ */ jsx("td", { className: "pt-4 text-gray-800 font-heading font-medium hover:underline flex", children: /* @__PURE__ */ jsx(Link, { href: route("password.request"), children: "Reset Password" }) }) })
+            /* @__PURE__ */ jsx("tr", { children: /* @__PURE__ */ jsx("td", { children: /* @__PURE__ */ jsx(
+              TextInput,
+              {
+                type: "password",
+                name: "password_confirmation",
+                id: "password_confirmation",
+                value: data.password_confirmation,
+                placeholder: "Enter COnfirm password ",
+                autoComplete: "new-password",
+                onChange: (e) => setData("password_confirmation", e.target.value)
+              }
+            ) }) })
           ] }),
           /* @__PURE__ */ jsx("tfoot", { children: /* @__PURE__ */ jsx("tr", { children: /* @__PURE__ */ jsx("td", { className: "pt-4", children: /* @__PURE__ */ jsx(
             "input",
@@ -61,7 +79,8 @@ const Login = () => {
               type: "submit",
               id: "submit",
               name: "submit",
-              value: "Login"
+              disabled: processing,
+              value: "Reset"
             }
           ) }) }) })
         ] })

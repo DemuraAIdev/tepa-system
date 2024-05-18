@@ -31,16 +31,32 @@ const ShopContainer = ({ item }) => {
     }
   }, [filter, item]);
   return /* @__PURE__ */ jsxs(Fragment, { children: [
-    /* @__PURE__ */ jsx("div", { className: "h-[10vh] bg-white border-[1px] border-b-gray-200 mt-[4em] md:mt-[5.5em] md:px-[5em] px-7     flex items-center", children: /* @__PURE__ */ jsxs("select", { className: "text-gray-500 select select-bordered h-[10px] md:w-[10%]  bg-white", onChange: (e) => setFilter(e.target.value), children: [
-      /* @__PURE__ */ jsx("option", { value: "All", children: "All" }),
-      /* @__PURE__ */ jsx("option", { value: "Alat-Tulis", children: "Alat-Tulis" }),
-      /* @__PURE__ */ jsx("option", { value: "Buku", children: "Buku" }),
-      /* @__PURE__ */ jsx("option", { value: "Perlengkapan", children: "Perlengkapan" }),
-      /* @__PURE__ */ jsx("option", { value: "Atribut", children: "Atribut" }),
-      /* @__PURE__ */ jsx("option", { value: "Voucher", children: "Voucher" }),
-      /* @__PURE__ */ jsx("option", { value: "Komponen-Komputer", children: "Komponen-Komputer" })
-    ] }) }),
-    /* @__PURE__ */ jsx("div", { className: "bg-white w-full min-h-screen md:px-[5em] p-7 grid sm:grid-cols-2 grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-[1em] md:gap-4    ", children: filteredItems.length > 0 ? filteredItems.map((item2, index) => /* @__PURE__ */ jsx(ShopProduct, { nama: item2.name, jenis: item2.jenis, harga: item2.harga, img: item2.image_url }, index)) : /* @__PURE__ */ jsx("h1", { className: "text-xl font-bold", children: "Item Not Found" }) })
+    /* @__PURE__ */ jsx("div", { className: "h-[10vh] bg-white border-[1px] border-b-gray-200 mt-[4em] md:mt-[5.5em] md:px-[5em] px-7     flex items-center", children: /* @__PURE__ */ jsxs(
+      "select",
+      {
+        className: "text-gray-500 select select-bordered h-[10px] md:w-[10%]  bg-white",
+        onChange: (e) => setFilter(e.target.value),
+        children: [
+          /* @__PURE__ */ jsx("option", { value: "All", children: "All" }),
+          /* @__PURE__ */ jsx("option", { value: "Alat-Tulis", children: "Alat-Tulis" }),
+          /* @__PURE__ */ jsx("option", { value: "Buku", children: "Buku" }),
+          /* @__PURE__ */ jsx("option", { value: "Perlengkapan", children: "Perlengkapan" }),
+          /* @__PURE__ */ jsx("option", { value: "Atribut", children: "Atribut" }),
+          /* @__PURE__ */ jsx("option", { value: "Voucher", children: "Voucher" }),
+          /* @__PURE__ */ jsx("option", { value: "Komponen-Komputer", children: "Komponen-Komputer" })
+        ]
+      }
+    ) }),
+    /* @__PURE__ */ jsx("div", { className: "bg-white w-full min-h-screen md:px-[5em] p-7 grid sm:grid-cols-2 grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-[1em] md:gap-4    ", children: filteredItems.length > 0 ? filteredItems.map((item2, index) => /* @__PURE__ */ jsx(
+      ShopProduct,
+      {
+        nama: item2.name,
+        jenis: item2.jenis,
+        harga: item2.harga,
+        img: item2.image_url
+      },
+      index
+    )) : /* @__PURE__ */ jsx("h1", { className: "text-xl font-bold", children: "No item found." }) })
   ] });
 };
 const ShopSearchBar = () => {

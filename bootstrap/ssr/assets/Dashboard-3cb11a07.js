@@ -1,5 +1,5 @@
 import { jsxs, jsx, Fragment } from "react/jsx-runtime";
-import { A as Authenticated } from "./AuthLayout-c7225f91.js";
+import { A as Authenticated } from "./AuthLayout-6232ca48.js";
 import { ResponsiveContainer, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Bar, AreaChart, Area } from "recharts";
 import "react";
 import { Head } from "@inertiajs/react";
@@ -10,6 +10,7 @@ import "react-icons/ai/index.esm.js";
 import "react-icons/fi/index.esm.js";
 import "react-icons/ri/index.esm.js";
 import "react-icons/fa/index.esm.js";
+import "react-icons/md/index.esm.js";
 const AdminLog = (audit) => {
   console.log(audit);
   return /* @__PURE__ */ jsxs("div", { children: [

@@ -1,5 +1,5 @@
 import { jsxs, Fragment, jsx } from "react/jsx-runtime";
-import { A as Authenticated } from "./AuthLayout-c7225f91.js";
+import { A as Authenticated } from "./AuthLayout-6232ca48.js";
 import { usePage, useForm, Link, Head } from "@inertiajs/react";
 import { useState, useEffect } from "react";
 import Barcode from "react-barcode";
@@ -11,6 +11,7 @@ import "react-icons/ai/index.esm.js";
 import "react-icons/fi/index.esm.js";
 import "react-icons/ri/index.esm.js";
 import "react-icons/fa/index.esm.js";
+import "react-icons/md/index.esm.js";
 const AdminAdd = ({ item }) => {
   const user = usePage().props.auth.user;
   const [filter, setFilter] = useState("All");
