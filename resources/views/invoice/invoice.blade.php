@@ -100,6 +100,6 @@
 </html>
 <script>
     window.onload = function() {
-        window.print();
+    xn    window.print();
     }
 </script>

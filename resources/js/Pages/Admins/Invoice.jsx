@@ -24,17 +24,17 @@ const Invoice = ({ transaction }) => {
                             <td>{item.kode_inv}</td>
                             <td>{new Date(item.created_at).toLocaleDateString()}</td>
                             <td>{item.total.toLocaleString('id-ID', { style: 'currency', currency: 'IDR' })}</td>
-                            <td>
+                            <td className='flex gap-4'>
                                 <a
                                     href={`/invoice/${item.id}/print`}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="btn btn-sm  btn-primary"
+                                    className="btn btn-xs  btn-primary"
                                 >
+
                                     Print
                                 </a>
-                                {/*delete  */}
-                                <Link href={route(`invoice.destroy`, item.id)} className="btn bg-red-500 text-white" method="delete" as='button' type="button">Remove</Link>
+                                <Link href={route(`invoice.destroy`, item.id)} className="btn btn-xs bg-red-500 text-white" method="delete" as='button' type="button">Remove</Link>
                             </td>
                         </tr>
                     ))}
