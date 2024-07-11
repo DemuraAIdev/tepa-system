@@ -1,7 +1,7 @@
 import { jsxs, jsx, Fragment } from "react/jsx-runtime";
 import { useState, useEffect } from "react";
 import { B as Brand } from "./Brand-867fe532.js";
-import { FaBarsStaggered } from "react-icons/fa6/index.esm.js";
+import { FaBarsStaggered } from "react-icons/fa6";
 import { router, Link, Head } from "@inertiajs/react";
 import "./Logo-82b068c2.js";
 const ShopProduct = ({ nama, jenis, harga, img }) => {

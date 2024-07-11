@@ -1,16 +1,16 @@
 import { jsxs, Fragment, jsx } from "react/jsx-runtime";
 import { useState, useEffect } from "react";
-import { A as Authenticated } from "./AuthLayout-6232ca48.js";
+import { A as Authenticated } from "./AuthLayout-9109092b.js";
 import axios from "axios";
 import { usePage, Head, Link } from "@inertiajs/react";
 import "./BrandLogo-c0dd44e2.js";
 import "./Logo-82b068c2.js";
-import "react-icons/fa6/index.esm.js";
-import "react-icons/ai/index.esm.js";
-import "react-icons/fi/index.esm.js";
-import "react-icons/ri/index.esm.js";
-import "react-icons/fa/index.esm.js";
-import "react-icons/md/index.esm.js";
+import "react-icons/fa6";
+import "react-icons/ai";
+import "react-icons/fi";
+import "react-icons/ri";
+import "react-icons/fa";
+import "react-icons/md";
 const SellingCashier = ({ items, kode_inv }) => {
   const itemss = items;
   const [addedItems, setAddedItems] = useState([]);

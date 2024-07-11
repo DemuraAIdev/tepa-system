@@ -2,12 +2,12 @@ import { jsxs, jsx, Fragment } from "react/jsx-runtime";
 import { useState } from "react";
 import { usePage, Link } from "@inertiajs/react";
 import { B as BrandLogo } from "./BrandLogo-c0dd44e2.js";
-import { FaPerson, FaInfo, FaPowerOff } from "react-icons/fa6/index.esm.js";
-import { AiFillDashboard, AiOutlineOrderedList } from "react-icons/ai/index.esm.js";
-import { FiDollarSign } from "react-icons/fi/index.esm.js";
-import { RiAdminFill } from "react-icons/ri/index.esm.js";
-import { FaBoxOpen } from "react-icons/fa/index.esm.js";
-import { MdReceiptLong } from "react-icons/md/index.esm.js";
+import { FaPerson, FaInfo, FaPowerOff } from "react-icons/fa6";
+import { AiFillDashboard, AiOutlineOrderedList } from "react-icons/ai";
+import { FiDollarSign } from "react-icons/fi";
+import { RiAdminFill } from "react-icons/ri";
+import { FaBoxOpen } from "react-icons/fa";
+import { MdReceiptLong } from "react-icons/md";
 function Authenticated({ user, header, children }) {
   const [open, setOpen] = useState(true);
   const users = usePage().props.auth.user;

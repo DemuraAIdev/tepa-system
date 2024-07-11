@@ -1,16 +1,16 @@
 import { jsxs, jsx, Fragment } from "react/jsx-runtime";
-import { A as Authenticated } from "./AuthLayout-6232ca48.js";
+import { A as Authenticated } from "./AuthLayout-9109092b.js";
 import { ResponsiveContainer, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Bar, AreaChart, Area } from "recharts";
 import "react";
 import { Head } from "@inertiajs/react";
 import "./BrandLogo-c0dd44e2.js";
 import "./Logo-82b068c2.js";
-import "react-icons/fa6/index.esm.js";
-import "react-icons/ai/index.esm.js";
-import "react-icons/fi/index.esm.js";
-import "react-icons/ri/index.esm.js";
-import "react-icons/fa/index.esm.js";
-import "react-icons/md/index.esm.js";
+import "react-icons/fa6";
+import "react-icons/ai";
+import "react-icons/fi";
+import "react-icons/ri";
+import "react-icons/fa";
+import "react-icons/md";
 const AdminLog = (audit) => {
   console.log(audit);
   return /* @__PURE__ */ jsxs("div", { children: [
@@ -36,7 +36,7 @@ const BoxChartOne = (monthlyData) => {
   return /* @__PURE__ */ jsxs(Fragment, { children: [
     /* @__PURE__ */ jsx("div", { children: /* @__PURE__ */ jsxs("h1", { className: "pl-[2em] pb-[1em] text-md font-body text-white font-bold", children: [
       "Product Log Graphic ",
-      (/* @__PURE__ */ new Date()).getFullYear()
+      new Date().getFullYear()
     ] }) }),
     /* @__PURE__ */ jsx("div", { className: "h-[40vh] w-full", children: /* @__PURE__ */ jsx(ResponsiveContainer, { width: "100%", height: "100%", children: /* @__PURE__ */ jsxs(
       BarChart,
@@ -89,7 +89,7 @@ const ProductChart = ({ data }) => {
   return /* @__PURE__ */ jsxs(Fragment, { children: [
     /* @__PURE__ */ jsxs("h1", { className: "pb-4 font-heading font-bold text-gray-200", children: [
       "Visitors Website Count ",
-      month[(/* @__PURE__ */ new Date()).getMonth()]
+      month[new Date().getMonth()]
     ] }),
     /* @__PURE__ */ jsx("div", { className: "h-[50vh] w-full", children: /* @__PURE__ */ jsx(ResponsiveContainer, { width: "100%", height: "100%", children: /* @__PURE__ */ jsxs(
       AreaChart,

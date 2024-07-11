@@ -1,5 +1,5 @@
 import { jsxs, Fragment, jsx } from "react/jsx-runtime";
-import { FaInstagram, FaYoutube, FaGlobe, FaGithub, FaLinkedin, FaFacebook } from "react-icons/fa6/index.esm.js";
+import { FaInstagram, FaYoutube, FaGlobe, FaGithub, FaLinkedin, FaFacebook } from "react-icons/fa6";
 import { Head } from "@inertiajs/react";
 const Dev = () => {
   return /* @__PURE__ */ jsxs(Fragment, { children: [
@@ -108,7 +108,7 @@ const Dev = () => {
           /* @__PURE__ */ jsx("br", {}),
           /* @__PURE__ */ jsx("br", {}),
           "© ",
-          (/* @__PURE__ */ new Date()).getFullYear(),
+          new Date().getFullYear(),
           " ISEKAI SYSTEM"
         ] })
       ] })

@@ -1,7 +1,7 @@
 import { jsxs, jsx, Fragment } from "react/jsx-runtime";
 import React, { useEffect, useState } from "react";
 import Typed from "typed.js";
-import { FaFacebookF, FaInstagram, FaYoutube, FaAnglesDown, FaMoon, FaSun, FaBarsStaggered } from "react-icons/fa6/index.esm.js";
+import { FaFacebookF, FaInstagram, FaYoutube, FaAnglesDown, FaBarsStaggered } from "react-icons/fa6";
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
 import { useTranslation } from "react-i18next";
@@ -10,6 +10,7 @@ import { Link as Link$1, Head } from "@inertiajs/react";
 import { B as BrandLogo } from "./BrandLogo-c0dd44e2.js";
 import { B as Brand } from "./Brand-867fe532.js";
 import { themeChange } from "theme-change";
+import { FaMoon, FaSun } from "react-icons/fa6/index.esm.js";
 import { Canvas } from "@react-three/fiber";
 import { useGLTF, useTexture, OrbitControls } from "@react-three/drei";
 import * as THREE from "three";

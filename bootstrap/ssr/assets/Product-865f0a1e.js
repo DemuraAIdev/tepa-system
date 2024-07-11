@@ -1,17 +1,17 @@
 import { jsxs, Fragment, jsx } from "react/jsx-runtime";
-import { A as Authenticated } from "./AuthLayout-6232ca48.js";
+import { A as Authenticated } from "./AuthLayout-9109092b.js";
 import { usePage, useForm, Link, Head } from "@inertiajs/react";
 import { useState, useEffect } from "react";
 import Barcode from "react-barcode";
 import { I as InputError } from "./InputError-75b3a913.js";
 import "./BrandLogo-c0dd44e2.js";
 import "./Logo-82b068c2.js";
-import "react-icons/fa6/index.esm.js";
-import "react-icons/ai/index.esm.js";
-import "react-icons/fi/index.esm.js";
-import "react-icons/ri/index.esm.js";
-import "react-icons/fa/index.esm.js";
-import "react-icons/md/index.esm.js";
+import "react-icons/fa6";
+import "react-icons/ai";
+import "react-icons/fi";
+import "react-icons/ri";
+import "react-icons/fa";
+import "react-icons/md";
 const AdminAdd = ({ item }) => {
   const user = usePage().props.auth.user;
   const [filter, setFilter] = useState("All");

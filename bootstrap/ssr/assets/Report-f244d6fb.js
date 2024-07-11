@@ -1,16 +1,16 @@
 import { jsxs, Fragment, jsx } from "react/jsx-runtime";
-import { A as Authenticated } from "./AuthLayout-6232ca48.js";
+import { A as Authenticated } from "./AuthLayout-9109092b.js";
 import { Head } from "@inertiajs/react";
-import { AiFillPrinter } from "react-icons/ai/index.esm.js";
+import { AiFillPrinter } from "react-icons/ai";
 import { useRef, useState } from "react";
 import { useDownloadExcel } from "react-export-table-to-excel";
 import "./BrandLogo-c0dd44e2.js";
 import "./Logo-82b068c2.js";
-import "react-icons/fa6/index.esm.js";
-import "react-icons/fi/index.esm.js";
-import "react-icons/ri/index.esm.js";
-import "react-icons/fa/index.esm.js";
-import "react-icons/md/index.esm.js";
+import "react-icons/fa6";
+import "react-icons/fi";
+import "react-icons/ri";
+import "react-icons/fa";
+import "react-icons/md";
 const Report$1 = (props) => {
   const tableRef = useRef(null);
   const [data, setData] = useState(
