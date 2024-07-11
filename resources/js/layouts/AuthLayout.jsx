@@ -21,9 +21,8 @@ export default function Authenticated({ user, header, children }) {
     return (
         <div className="flex">
             <div
-                className={`flex flex-col justify-between border-gray-700 border-r-2 ${
-                    open ? "w-72" : "w-20 "
-                } bg-dark-purple border-gray-300 h-screen p-5  pt-8 relative duration-300`}
+                className={`flex flex-col justify-between border-gray-700 border-r-2 ${open ? "w-72" : "w-20 "
+                    } bg-dark-purple border-gray-300 h-screen p-5  pt-8 relative duration-300`}
             >
                 <img
                     src="/Image/control.png"
@@ -35,16 +34,14 @@ export default function Authenticated({ user, header, children }) {
                     <div className="flex gap-x-4 items-center">
                         <RouteLink
                             href="/"
-                            className={`cursor-pointer duration-500 ${
-                                open && "rotate-[360deg]"
-                            }`}
+                            className={`cursor-pointer duration-500 ${open && "rotate-[360deg]"
+                                }`}
                         >
                             <BrandLogo />
                         </RouteLink>
                         <h1
-                            className={`text-indigo-600 origin-left font-body font-semibold text-xl duration-200 ${
-                                !open && "hidden"
-                            }`}
+                            className={`text-indigo-600 origin-left font-body font-semibold text-xl duration-200 ${!open && "hidden"
+                                }`}
                         >
                             Technopark
                         </h1>
@@ -65,11 +62,10 @@ export default function Authenticated({ user, header, children }) {
                                                 <AiFillDashboard />
                                             </div>
                                             <span
-                                                className={`${
-                                                    !open && "hidden"
-                                                } origin-left duration-200`}
+                                                className={`${!open && "hidden"
+                                                    } origin-left duration-200`}
                                             >
-                                                Dashboard
+                                                Dashboards
                                             </span>
                                         </RouteLink>
                                     </li>
@@ -85,9 +81,8 @@ export default function Authenticated({ user, header, children }) {
                                                 <FaBoxOpen />
                                             </div>
                                             <span
-                                                className={`${
-                                                    !open && "hidden"
-                                                } origin-left duration-200`}
+                                                className={`${!open && "hidden"
+                                                    } origin-left duration-200`}
                                             >
                                                 Products
                                             </span>
@@ -105,9 +100,8 @@ export default function Authenticated({ user, header, children }) {
                                                 <RiAdminFill />
                                             </div>
                                             <span
-                                                className={`${
-                                                    !open && "hidden"
-                                                } origin-left duration-200`}
+                                                className={`${!open && "hidden"
+                                                    } origin-left duration-200`}
                                             >
                                                 Admins
                                             </span>
@@ -127,9 +121,8 @@ export default function Authenticated({ user, header, children }) {
                                         <FiDollarSign />
                                     </div>
                                     <span
-                                        className={`${
-                                            !open && "hidden"
-                                        } origin-left duration-200`}
+                                        className={`${!open && "hidden"
+                                            } origin-left duration-200`}
                                     >
                                         Selling
                                     </span>
@@ -147,9 +140,8 @@ export default function Authenticated({ user, header, children }) {
                                         <MdReceiptLong />
                                     </div>
                                     <span
-                                        className={`${
-                                            !open && "hidden"
-                                        } origin-left duration-200`}
+                                        className={`${!open && "hidden"
+                                            } origin-left duration-200`}
                                     >
                                         Invoice
                                     </span>
@@ -182,9 +174,8 @@ export default function Authenticated({ user, header, children }) {
                                         <AiOutlineOrderedList />
                                     </div>
                                     <span
-                                        className={`${
-                                            !open && "hidden"
-                                        } origin-left duration-200`}
+                                        className={`${!open && "hidden"
+                                            } origin-left duration-200`}
                                     >
                                         Report
                                     </span>
@@ -205,9 +196,8 @@ export default function Authenticated({ user, header, children }) {
                             >
                                 <FaPerson />
                                 <span
-                                    className={`${
-                                        !open && "hidden"
-                                    } origin-left duration-200`}
+                                    className={`${!open && "hidden"
+                                        } origin-left duration-200`}
                                 >
                                     {users.name}
                                 </span>
@@ -223,9 +213,8 @@ export default function Authenticated({ user, header, children }) {
                             >
                                 <FaInfo />
                                 <span
-                                    className={`${
-                                        !open && "hidden"
-                                    } origin-left duration-200`}
+                                    className={`${!open && "hidden"
+                                        } origin-left duration-200`}
                                 >
                                     About
                                 </span>
@@ -242,9 +231,8 @@ export default function Authenticated({ user, header, children }) {
                             >
                                 <FaPowerOff />
                                 <span
-                                    className={`${
-                                        !open && "hidden"
-                                    } origin-left duration-200`}
+                                    className={`${!open && "hidden"
+                                        } origin-left duration-200`}
                                 >
                                     Logout
                                 </span>
